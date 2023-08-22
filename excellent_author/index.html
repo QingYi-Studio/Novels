@@ -153,13 +153,13 @@
       <div class="container">
         <div class="row">
           <div class="text-center col-md-8 col-12 mx-auto">
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, praesentium, autem,
-              veritatis error quidem eos fuga atque asperiores magnam deleniti necessitatibus sequi</p>
+            <p class="lead">本小说网正在快速更新迭代，收藏本站以防止丢失！</p>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-4 col-auto mx-auto"> <a class="btn btn-block btn-lg btn-success" href="#" title="">Sign up
-              now!</a> </div>
+          <div class="col-sm-4 col-auto mx-auto">
+			  <a class="btn btn-block btn-lg btn-success" title="收藏! 马上收藏!" onClick="bookmark()">现在收藏!</a>
+			</div>
         </div>
       </div>
     </div>
@@ -215,49 +215,12 @@
       </div>
     </div>
   </section>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-8 mx-auto">
-        <div class="jumbotron">
-          <div class="row text-center">
-            <div class="text-center col-12">
-              <h2>Request a free quote</h2>
-            </div>
-            <div class="text-center col-12">
-              <!-- CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form -->
-              <form id="feedbackForm" class="text-center">
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Name"
-                    aria-describedby="nameHelp">
-                  <span id="nameHelp" class="form-text text-muted" style="display: none;">Please enter your name.</span>
-                </div>
-                <div class="form-group">
-                  <label for="email">E-Mail</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"
-                    aria-describedby="emailHelp">
-                  <span id="emailHelp" class="form-text text-muted" style="display: none;">Please enter a valid e-mail
-                    address.</span>
-                </div>
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea rows="10" cols="100" class="form-control" id="message" name="message" placeholder="Message"
-                    aria-describedby="messageHelp"></textarea>
-                  <span id="messageHelp" class="form-text text-muted" style="display: none;">Please enter a
-                    message.</span>
-                </div>
-                <button type="submit" id="feedbackSubmit" class="btn btn-primary btn-lg"> Send</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+ 
   <footer class="text-center">
     <div class="container">
       <div class="row">
         <div class="col-12">
+		  <p>&nbsp;</p>
           <p>Copyright © Sunrise Studio. All rights reserved.</p>
         </div>
       </div>
@@ -268,6 +231,16 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="popper.min.js"></script>
   <script src="bootstrap-4.4.1.js"></script>
+
+  <!--悬浮按钮-->
+  <div class="float-button" onclick="toggleFloatBox()"></div>
+  <div class="float-box" id="floatBox">
+  <div class="float-box-content" id="commitsContent"></div>
+  <!--悬浮按钮-->
+  <link href="../floating-button.css" rel="stylesheet">
+  <script src="../floating-button.js"></script>
+  <!--收藏网站-->
+  <script src="collect_web.js"></script>
 </body>
 
 </html>
