@@ -7,14 +7,14 @@ body {
 }
 /* Container */
 .container {
-	width: auto;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #FFFFFF;
 }
 /* Header */
 header {
-	width: 100%;
+	width: auto;
 	height: 8%;
 	background-color: #5D5E5D;
 	border-bottom: 1px solid #353635;
@@ -89,12 +89,17 @@ header {
 /* More info */
 .intro {
 	background-color: #FFFFFF;
-	padding-bottom: 35px;
+	padding-bottom: 25px;
+	width: auto;
+	float: none; /* 取消浮动 */
+    display: flex; /* 使用flexbox布局 */
+    justify-content: space-between; /* 调整内容的水平对齐方式 */
+    align-items: center; /* 调整内容的垂直对齐方式 */
 }
-.column {
+.column {/*头像位置*/
 	width: 50%;
 	text-align: center;
-	padding-top: 30px;
+	padding-top: 5px;
 	float: left;
 }
 .intro .column h3 {
@@ -103,6 +108,7 @@ header {
 }
 .intro .column p {
 	color: #FFFFFF;
+	width: auto;
 }
 .cards {
 	width: 100%;
@@ -119,7 +125,7 @@ header {
 	font-weight: lighter;
 	margin-left: 20px;
 	margin-right: 20px;
-	width: 80%;
+	width: auto;
 	margin-top: 4%;
 }
 .button {
