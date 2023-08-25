@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html lang="cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>从斗破开始的轮回</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="介绍.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li class="chapter-item expanded "><a href="荣誉.html"><strong aria-hidden="true">2.</strong> 荣誉</a></li><li class="chapter-item expanded "><a href="第一章-穿越.html"><strong aria-hidden="true">3.</strong> 第一章 穿越</a></li><li class="chapter-item expanded "><a href="第二章-炼药.html"><strong aria-hidden="true">4.</strong> 第二章 炼药</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">从斗破开始的轮回</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="介绍"><a class="header" href="#介绍">介绍</a></h1>
+<p><img src="./%E4%BB%8B%E7%BB%8D.assets/%E7%A9%BF%E8%B6%8A%E7%B3%BB%E7%BB%9F%E4%B9%8B%E6%96%97%E7%A0%B4%E8%8B%8D%E7%A9%B9.png" alt="穿越系统之斗破苍穹" /></p>
+<p>创作时间：2019.10.25-21:37</p>
+<p>更新日期：2022.7.20-9:28:53</p>
+<p>简介：</p>
+<p>斗气大陆只是开始，旅途的终点还犹未可知。</p>
+<p>终焉之后又是否可见光明。</p>
+<p>转万世轮回，破终焉之环。</p>
+<p>结束之后的开始真的真实吗？</p>
+<p>原《穿越系统之斗破苍穹》</p>
+<hr />
+<p>作者寄语：</p>
+<p>练手之作，模仿当时盛行的系统流写的一篇文章，在当时的QQ阅读，以斗破苍穹为基础的穿越流算是比较流行的，我当时也就跟风模仿了一下。后续学习压力大了，便也暂缓了更新，由于过长时间不更新，让我的思路链断裂及其严重，越拖越想不出来。现在我想认真回来写，希望可以有一个完善的结尾吧……</p>
+<p>在多次犹豫后，改为无敌流小说。——2023.8.25</p>
+<hr />
+<p>QA：</p>
+<p>Q：为什么不写短文？</p>
+<p>A：脑中全是悠长的故事，以我的能力无法完整的写出，但我想不出短文，故从不写短文。</p>
+<p>Q：你会写自己真正的纯原创的作品吗？</p>
+<p>A：我很希望，我有无数构思，却无处下笔。闭眼脑中故事流转，睁眼故事云烟消散。</p>
+<hr />
+<p>少年黄粱一梦，未来蓦然回首，不见少年之心，只见空荡虚无。</p>
+<p>结束，却没了新的开始。</p>
+<!--借三尺明月，衔两袖青龙，轻剑快马恣意，携侣江湖同游！-->
+<div style="break-before: page; page-break-before: always;"></div><h1 id="荣誉"><a class="header" href="#荣誉">荣誉</a></h1>
+<p>2021-07-09 累积获得三百个收藏</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第一章-穿越"><a class="header" href="#第一章-穿越">第一章 穿越</a></h1>
+<p>“射手你别往前冲啊”</p>
+<p>“坦克你干嘛往后缩啊，抗伤害啊”</p>
+<p>随着“Defeat”的出现萧遥瘫倒在床上，眼前一黑……</p>
+<!--少打王者，身心舒畅-->
+<hr />
+<p>萧遥从床上起来，发现周围的一切都变了，像古代一样，自己身上的衣服也变成了像古装一样的衣服。突然，一股信息流涌入他的脑中：他是加玛帝国乌坦城萧家的一名子弟，已经15岁了，才四段斗之气，萧炎已经失去斗气回到斗之气三段两年了。因为萧遥曾经在上一世看过许多小说，所以他一下就分辨出来了这是天蚕土豆写的《斗破苍穹》。突然他脑子里传来一阵声音。</p>
+<p>“嘀，系统正在启动中。”</p>
+<p>“已启动完毕。”</p>
+<p>“系统？什么系统？难道是穿越小说里那些主角的金手指吗？“萧遥想到这里，不由得心情激动了起来。</p>
+<p>“是的。”系统似乎可以知道萧遥心里在想什么，“宿主不断提升自身修为来获取积分来抽取或用积分兑换各个位面的物品。”</p>
+<p>萧遥问系统：“有没有新手大礼包之类的。”</p>
+<p>“有一份小礼包、一次抽奖和一个小小的愿望。”</p>
+<p>“那快打开大礼包。”</p>
+<p>“嘀，宿主获得一部无品阶功法和一枚六品疗伤丹药。”</p>
+<p>“介绍一下那功法和斗技吧。”</p>
+<p>“功法无品阶，名为无极，极其诡异、难修炼，但练至纯熟，可幻化先天八卦，此功法建议宿主五星斗者后修习。”</p>
+<p>“那就没有一些可以现在就使用的吗？”萧遥一脸尴尬的说。他现在就像有着一座金山，却只能看着，不能用，心里十分憋屈。</p>
+<p>“您还有一个小小的愿望和一次抽奖。”</p>
+<p>“那我要成为斗帝。”</p>
+<p>“抱歉，宿主，这是一个小小的愿望，不能完成这些不切实际的想法。”</p>
+<p>萧遥一脸尴尬：“那我要一颗可以永久提升我的天赋资质的丹药。”</p>
+<p>“嘀，正在兑换中——”系统机械的声音在萧遥脑子里响起，“已经兑换成功，现存在系统空间内。”</p>
+<p>“快拿出来。”萧遥激动的说。突然，他感觉自己手里竟然真的有一颗浑圆的丹药，立刻服了下去，感到一股热流从自己喉咙处涌下，打通了自己身体里所有的经脉，他感觉自己在两月内就可以修炼到斗者。</p>
+<p>“现在快开始抽奖吧。”“嘀，正在抽奖中。”萧遥的脑子里出现了一个大转盘，上面有着各种东西，斗破苍穹里的各种异火，还有地球上xxx</p>
+<!--
+哎对，当年(2019)我是想要点名肖战、王一博这种垃圾狗屎玩意的，毕竟当年蔡徐坤没火
+现在嘛，林彦俊由于我有个朋友喜欢，我不做点评，抛开他不谈，流量明星，包括TFBoys，就是那三个傻逼，全部都是垃圾
+不男不女，甚至不如男娘，至少人家男娘好看
+长得垃圾，样子全靠化妆+P图，没有任何实力，狂魔哥都比这种垃圾男女明星好吧
+呵，有人不服，给我忍着，你们在我面前没资格叫嚣
+-->
+<p>的签名照……简直是包罗万象。（还有一些杂物，例如牙膏，雪碧什么的，作者在此就省略了）转盘上的指针停止了，指针指向一个位置，那里写着“万界炼药用品”萧遥心里真是激动万分，这可是诸天万界的炼药用品，可不是什么一般的东西。</p>
+<p>“系统快打开礼包。”萧遥看着刚打开礼包，在系统空间内出现的一些物品：一本比字典还厚的的大本子、一座巨大的药鼎，还有一朵淡青色莲花。</p>
+<p>萧遥一眼无语的看着那本比字典还厚的大本子，心想：这是要背死我吗，这么厚！不过这异火倒是不错，就是感觉比小说里看到的要厉害啊。(谁告诉你这是普通异火了)</p>
+<p>萧遥看着系统空间中的物品，那本《炼丹从入门到入土》让他瞬间呆滞，这种名字完全不像小说世界本土物品，甚至没有正常的介绍，只有一句内容很全，不过介绍如此短，肯定已经涉及到了一部分世界规则，已经偏向概念性力量了。旋即，他看向那药鼎，药鼎名为天地鼎，可炼天地，能使人更容易进入那种炼丹时的奇异状态，还有在炼丹时的灵魂之力能更加灵敏，在炼丹时可以可以提升五成的成功率。</p>
+<p>看到这药鼎如此强悍，萧遥对于那异火的期待更加浓郁了，当看到异火介绍时，惊诧之情溢于面上，只有一个名称——青衣之火，介绍全部都是问号。</p>
+<p>“系统，这是怎么回事？”</p>
+<p>“很抱歉，我也不知道。原来应该是青莲地心火，但不知道何时变成了这青衣之火。不过这火在我检查后，认为对宿主无害，威力远超青莲地心火”</p>
+<p>“认为？你也判断不了吗？”</p>
+<p>“嗯，我虽拥有通晓万界，却不知这火为何物，只能根据经验判断出这是无害的。”</p>
+<p>“既然无害，那以后便炼化了。”</p>
+<p>“那现在就看看怎么学习这本……《炼丹从入门到入土》吧。系统，来冒个泡。”</p>
+<p>“宿主，您不必担心，您只需取出后灌入力量就可接受这个知识传承了。只是在接受过程中会有些头脑酸痛。”</p>
+<p>“知道了，快开始吧。”</p>
+<p>随着斗之气的灌入，那本厚书迅速融化，化作流光冲进了萧遥的大脑。萧遥捂住头嘴角抽着丝丝凉气，脸部肌肉扭曲着，显得十分痛苦。</p>
+<p>在萧遥的灵魂空间内，他的灵魂在这等的知识传承下也不断浮现出裂纹<!--设定：灵魂彻底崩毁后必死，救不回来-->，随着裂纹的不断出现，系统也终于出声了“你还不出手吗，这小家伙可是快不行了，你不是**吗，你可以救他。就像****”</p>
+<p>系统空间中的青衣之火波动了一下“果然把你的意识保留下来了，你说的那些事情我帮你屏蔽了，太早知道对他可不好，这你应该记得”</p>
+<p>“小子，以后别什么都不知道就乱吸东西，每次都是这么早就要我来救你，都不能歇一歇的……”</p>
+<p>话音落下，繁杂的传承之力被抽出，分为四份。</p>
+<p>“灵魂力量够了会自然解封的，以凡人灵魂强行窥探不属于你现在不可以看的丹方几乎必死无疑<!--因为第二世强行扛下来了-->，不过修炼之法这种就无所谓了，我给你留了一个，别的太垃圾了，攻击手段不适合你的就帮你舍去了”</p>
+<p>“对了……不要找我问一些你不能知道的事情，到了时间要么你自己知道，要么我会告诉你，我休息去了，没事别来烦我，有什么大事我比你早知道，这火焰你可以炼化，反正只是我的一道神念承载体”</p>
+<p>过了几分钟，萧遥才缓缓放松下来，整理着那那大量的知识：成千上万的药方、一道修炼灵魂的法决与数十道的灵魂攻击的魂技，让萧遥的眼睛都快花了。</p>
+<p>“等等，刚刚是那青衣之火救了我，所以那出声之人是叫做青衣吗？每次……难道穿越不是偶然，是有阴谋的？不过他对我似乎没有恶意……”</p>
+<p>“宿主，你别想了，你迟早会知道的”</p>
+<p>“而且你不只是系统吧，你是一个真人，你似乎和那青衣相识”</p>
+<p>“……”</p>
+<p>“你会明白的……”</p>
+<p>“这需要靠所有的你我来打破……”(很小声，主角听不见)</p>
+<hr />
+<p>在查看使用拿到的物品后，有那丹药的帮助，萧遥呼吸间就可满足斗者前的日常修炼，即使到了更高境界，也可以让他在非修炼状态更快的恢复力量。</p>
+<p>待萧遥睡醒时，已是第二天清晨，他吐出一口浊气，感受着体内那愈发强盛的斗之气，脸上满是喜意，因为他已从斗之气四段晋升到了斗之气六段了。萧遥心想：那丹药果然效果不错，这才一个晚上，就从斗之气四段突破到了斗之气六段，若没有那颗丹药，这可是我想都不敢想的。<!--为了九界剧情，只能强行推主线了--></p>
+<p>既然已经来到这个世界了，那就出去转转吧。</p>
+<p>萧遥漫步在萧家中，见家中大厅有不少人聚集，发现今天好像就是萧炎被纳兰嫣然退婚的日子，赶忙走向大厅。</p>
+<p>待他进入大厅之时<!--不是正门进的-->，纳兰嫣然已然向萧战提出了退婚，萧遥冷哼一声，说到：“我萧炎表弟的婚也是你能退的！此次你来萧家退婚可曾问过纳兰桀老爷子？若是没有，那你就是亵渎长辈。”</p>
+<p>萧遥一番话噎得纳兰嫣然和葛叶无话可说。“不如这样吧，你们定下三年之约，三年后，萧炎上云岚山向你挑战。此次比试不牵扯到云岚宗、纳兰家与萧家。若你输了，便被萧家休了，萧炎若输了，便依你所言——退婚。怎么样？”</p>
+<p>“好，便依你所言，到时候若你反悔，后果……”纳兰嫣然的话虽未说完，但那话里蕴含着的寒意，萧遥却是感受到了。<!--蝴蝶效应开始了--></p>
+<hr />
+<p>此次退婚事件过后，萧遥第一次在这个世界感受到了实力的重要性。只有你实力强了，才无人敢在你头上肆意作威作福，自己又无可奈何。</p>
+<p>萧遥回房间开始了修炼。修炼一直持续到第二天清晨，萧遥才缓缓停下修炼，此时，借助那提升修炼天赋的丹药，他成功突破到了斗者，而且直接进入了二星斗者的行列。这么大的实力飞跃连萧遥自己都没有料到。</p>
+<!--剧情有点快，因为要快速推主线，斗破剧情只是十分之一--><div style="break-before: page; page-break-before: always;"></div><h1 id="第二章-炼药"><a class="header" href="#第二章-炼药">第二章 炼药</a></h1>
+<p>萧遥感受着体内那充足的斗气，认为暂时已经够了，于是开始了魂技的修炼。</p>
+<p>魂技分三种，分别是：辅助类、攻击类、修炼类。萧遥现在修炼的是修炼类魂技——太一魂诀。（读过斗破的人都知道，这是萧炎在中州丹会冠军被丹塔三巨头给予的一本灵魂修炼类魂技）</p>
+<p>萧遥结出修炼手印，感受着天地间的灵气，将其缓缓地吸纳入体，融入他的灵魂力量，使他的灵魂缓缓的变强，而且竟然在隐隐间有一丝灵气。</p>
+<p>如果这是他修炼数十年的成果，也许还可以是让人相信，但他现在只有15岁，灵魂力量就已经达到了这种地步，这在斗气大陆上是绝无仅有的，更别说他一次修炼只到了如此地步，这是让所有人都为之恐惧的修炼速度。</p>
+<p>连萧遥自己都觉得修炼速度有点过快了，认为自己在修炼下去不是不行，而是有可能导致根基不稳，对修炼有影响，所以他打算在最近几天内修炼炼药术，让自己的实力快速的稳固下来，为以后的修炼之路打下坚实的基础。<!--不然继续推主线有点快的过头了，稍微缓缓--></p>
+<p>萧遥看了看身上的金币，只够买几副疗伤药的药材。在宽敞的街道上拐了几拐，最后窜进了位于城市偏南的一处中型坊市，这种中型坊市，在乌坦城足有好几个，分别被城市中的三大家族把持，萧炎所来的这处坊市，便是由他们萧家掌控……</p>
+<p>萧遥在萧家坊市买好药材后就开始逛了起来，想要看看能不能淘到一些好东西。例如魔核、秘法、斗技等物品。</p>
+<p>魔核，在斗气大陆之上，也被称为魔晶以及灵丹药的雏形等等。顾名思义，魔核是魔兽体内的一种能量晶核，其内充斥着极为狂暴的天地能量，这种能量，就算是一名斗王强者，也不敢冒着爆体陨落的危险，将之强行吸入体内。<!--保留这句肯定是有用的，毕竟主角的功法肯定是有奇异之处的--></p>
+<p>魔核虽然并不能直接供人吸收，不过它却是炼药师炼药时必不可少的主材料。经过炼药师用提炼过的魔核，可以被一些药草中和掉狂暴属性，摇身变为无数人垂涎至极的各种提升实力的丹药，身价顿时暴涨！</p>
+<p>再有，魔核也能加持在武器之上，被加持了魔核的武器，破坏力不仅将会更胜一筹，而且还具备增幅斗气的诱人特效，深受斗气大陆斗者阶层的追捧。</p>
+<p>当然，除了武器，魔核也能加持在盔甲等等物品之上，给使用者带来强悍的防御力，让人在面对危险之时，更多了几分生命的保障。</p>
+<p>如此众多的特效，自然使得魔核当之无愧的成为了斗气大陆最受欢迎的主流材料，不仅斗者，就是连那些尊贵的炼药师，也常常会屈身满世界寻找高等级的魔核，以炼制更高级的丹药。</p>
+<p>在这种潮流的带动之下，大陆之上的魔核，几乎是常年处于供不应求的境地，高等级的魔核只要一出现在拍卖会或者其他之地，立马便将会被人高价收走。</p>
+<p>魔核的昂贵，自然造就出了大批专以捕杀魔兽为生的佣兵团，不过，魔核的获得，却并不是一件容易的事。</p>
+<p>首先，魔兽不仅实力强悍，并且异常狡诈，由于凶狠的本性以及特殊的攻击方式，魔兽往往比同等级的人类强者要强上几分，所以，想要单独猎杀同等级的魔兽，没有过人的实力，很容易偷鸡不成蚀把米。</p>
+<p>其次，并不是所有的魔兽，体内都具有魔核这种能量结晶，这似乎是一种随机的概率，有时候，当一个佣兵团以半个团人员的伤亡击杀了一头魔兽，说不定到头来，却是两手空空，这种事，在斗气大陆，屡见不鲜，并不算稀奇……</p>
+<p>因此，魔核在斗气大陆上的身价，一直都是久居其上，极为抢手。</p>
+<p>萧遥逛着逛着就到了坊市深处。坊市深处售卖之物，较之外面一般要珍贵上许多，所以，能来到此处购买的客户，在乌坦城也算是有几分实力。</p>
+<p>在萧炎买下魔核与黑铁片后，萧遥看到了他。</p>
+<p>“萧炎表弟，你好啊。”</p>
+<p>“你是谁啊？我怎么没有见过你？你为什么还叫我表弟？”萧炎皱了皱眉，有点愕然。</p>
+<p>“萧炎兄，你难道忘了吗？之前可是还来参加过你的生日呢！”萧遥顺口说到，当然，这也是系统在他穿越到这个世界来时，在这个世界的其他人的记忆里安插的另外记忆。</p>
+<p>萧炎听到他还来参加过自己的生日，心里的警惕不由得放松许多。“原来是萧遥表哥，真是好久不见。真抱歉，我都差点忘了你了。”萧炎一脸愧疚。</p>
+<p>“没关系，大家都是朋友。”萧遥耸了耸肩。</p>
+<p>“那谢谢了。”萧炎说，“萧遥兄，你来这里是要干嘛呀？”</p>
+<p>“就是平时在房子里闷太久了，想出来逛逛，没想到就碰见了萧炎表弟你。”萧遥这话倒没有骗人，他确实是无意间就碰到萧炎的。</p>
+<p>“那萧遥兄，不如一起逛逛吧。”萧炎询问萧遥。</p>
+<p>“好啊。”萧遥还从未和主角在一起过，他还巴不得萧炎问这句话呢。</p>
+<p>萧炎和萧遥在坊市逛了逛，没看到什么好东西。</p>
+<p>萧炎说：“萧遥兄，我还有点事，先走了。”</p>
+<p>“好。”萧遥知道萧炎这自然是要修炼去了，毕竟药尘还要给他炼制筑基灵液。</p>
+<p>萧炎走了，那萧遥也没有什么兴趣再呆在坊市里。</p>
+<hr />
+<p>萧遥前往后山，悄悄的溜到萧家后山的一个山洞里。<!--萧家后山全是洞，笑死了-->萧遥知道，炼药之时，切忌被打扰，家族中人多手杂，那萧遥可承受不起后果。</p>
+<p>把意识探入系统空间，取出药鼎和药材，突然想起自己还没有功法，只得询问系统：“系统里有没有什么适合我的功法？”</p>
+<p>“有两部，一部主攻，一部炼药，请问宿主要哪一个？宿主现在太穷了，所以系统给宿主免费兑换一次地阶以下的功法。”萧遥十分憋屈，因为他现在确实一穷二白。</p>
+<p>“那我要攻击的那部功法。”</p>
+<p>“嘀，兑换成功。已存到系统空间。”</p>
+<p>“这也太厉害了吧，但这条件有一点过于苛刻了吧。”萧遥既惊叹，又难受。因为这和焚诀一样，都可以进化，但他这个要天火、诡灵、和灵印。很可惜，这几种东西萧遥都未曾听说过。不过这功法在斗气大陆上仅次于地阶，暂时也够用了。他转化完斗气，又想起自己还没有火焰，问：“系统，那青莲地心火我可以吸收吗？”</p>
+<p>“可以，系统里的火焰只需炼化一次，就可以化为己有。”</p>
+<p>萧遥听了，十分开心，立即取出青莲地心火(?)，一口吞了下去，用斗气牵引着火焰完成炼化。几分钟后火焰便炼化成功了。</p>
+<p>萧遥望着那在手掌上飘荡的青色火焰，十分欣喜。</p>
+<p>萧遥取出天地鼎，其上略带着点点毫光，在药鼎的下方处，有数个彼此相连的通火空洞，空洞弯曲连绵，越深入里面，则直径越小，隐隐看去，似乎内藏奥妙。</p>
+<p>药鼎顶段位置，有一个看不出是什么材质所制的鼎盖，鼎盖一处，还有着一个特殊的孔洞，这是专门投入药材的地方。</p>
+<p>在鼎盖上，散布着一些细密孔洞，这有着散热的功效，以防止高温而导致爆炉，药鼎中间的部分，安置了一块透明镜面，从这里，能够在炼药时，清楚的看见里面的一切动静。
+药鼎也有级别之分，鼎炉的通火口越多，则说明药鼎越高级，也越稀有，你别以为这种火口是随便打几个洞就成，里面的奥妙，外行人根本难以发觉，而火口，是药鼎的精华所在，需要高精度的打磨，打造期间，只要稍有一点差错，整个药鼎，都将会沦为失败品，所以，火口越多的药鼎，对炼药的辅助效果，也更强，当然，想要控制多个火口，那就需要强大的灵魂感知力。
+一个好的药鼎对于炼药师来说，就如同武士手中的宝剑一般重要。
+萧遥把手按在火口之上，把异火放入其中。
+萧遥闭上双眼，心神缓缓凝定，出色的灵魂感知力，不断的在体内来回的扫描着那一丝浅薄的木之力。
+第一次寻找体内的木之力，足足用了十多分钟，萧遥方才松了一口气的睁开眼眸。将木之气也灌入药鼎之中。由于木生火的原理，此时的火焰，明显比先前，更具有持久性与掌控性。
+萧遥从系统空间中取出药材，在脑中记忆了一下药材的数量之后，萧遥的灵魂感知力逐渐的侵入进药鼎之中，控制着青莲地心火。
+萧遥投入凝血草，凝血草在火焰中翻腾了片刻时间，其终于开始逐渐的脱去草皮，草叶中所蕴含的汁液，也被熏烤成了一点点淡白粉末，凝血草中的精华药力，终于被萧遥成功提炼而出。
+狭窄的山洞之内，药鼎中的火焰，反射在山壁之上，张牙舞爪的不断跳动。
+萧遥全神贯注的注视着药鼎中那翻腾的火焰，略微有些苍白的脸庞上，密布着汗珠，长时间炼药，是一件极其消耗斗气的工作，而且萧遥此时又是使用的异火，在持久性上，很难有什么优势，所以，他能在药鼎前坚持炼药接近两个小时，已经很是不易。
+当萧遥又提炼好一株药材后，努力保持平衡的肩膀顿时跨了下来，身子犹如脱力一般，软软的倒躺在了冰冷的地面之上，大口大口的喘着气，胸膛不断的起伏着，全身酸麻的他，现在简直连一根手指头都懒得再动弹。
+懒惰与勤奋在心中天人交战片刻之后，萧遥只得万分不情愿的坐起身子，颤抖的双手摆出修炼的手印，然后缓缓的闭目。
+在闭目修养了接近一个小时之后，萧遥体内那因为斗气的耗尽而显得黯淡的气旋，终于再次散发出明亮的光泽，而且此次的光晕，较之几个小时前，似乎还更亮堂了一点点。
+缓缓的睁开眼眸，全身上下那股酸麻的无力感，也是退散了大半之多，扭了扭脖子，骨头相碰撞的声音让得萧遥舒畅的吐了一口气。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
