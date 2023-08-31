@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="介绍.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li class="chapter-item expanded "><a href="荣誉.html"><strong aria-hidden="true">2.</strong> 荣誉</a></li><li class="chapter-item expanded "><a href="第1章-穿越.html"><strong aria-hidden="true">3.</strong> 第1章 穿越</a></li><li class="chapter-item expanded "><a href="第2章-炼药.html" class="active"><strong aria-hidden="true">4.</strong> 第2章 炼药</a></li><li class="chapter-item expanded "><a href="第3章-拍卖聚气散.html"><strong aria-hidden="true">5.</strong> 第3章 拍卖聚气散</a></li><li class="chapter-item expanded "><a href="第4章-拍卖.html"><strong aria-hidden="true">6.</strong> 第4章 拍卖</a></li><li class="chapter-item expanded "><a href="第5章-测试.html"><strong aria-hidden="true">7.</strong> 第5章 测试</a></li><li class="chapter-item expanded "><a href="第6章-无极.html"><strong aria-hidden="true">8.</strong> 第6章 无极</a></li><li class="chapter-item expanded "><a href="第7章-成人仪式.html"><strong aria-hidden="true">9.</strong> 第7章 成人仪式</a></li><li class="chapter-item expanded "><a href="第8章-斗气阁.html"><strong aria-hidden="true">10.</strong> 第8章 斗气阁</a></li><li class="chapter-item expanded "><a href="完结.html"><strong aria-hidden="true">11.</strong> 完结</a></li><li class="chapter-item expanded "><a href="小说大纲.html"><strong aria-hidden="true">12.</strong> 小说大纲</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="介绍.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li class="chapter-item expanded "><a href="荣誉.html"><strong aria-hidden="true">2.</strong> 荣誉</a></li><li class="chapter-item expanded "><a href="第1章-穿越.html"><strong aria-hidden="true">3.</strong> 第1章 穿越</a></li><li class="chapter-item expanded "><a href="第2章-炼药.html" class="active"><strong aria-hidden="true">4.</strong> 第2章 炼药</a></li><li class="chapter-item expanded "><a href="第3章-拍卖聚气散.html"><strong aria-hidden="true">5.</strong> 第3章 拍卖聚气散</a></li><li class="chapter-item expanded "><a href="第4章-拍卖.html"><strong aria-hidden="true">6.</strong> 第4章 拍卖</a></li><li class="chapter-item expanded "><a href="第5章-测试.html"><strong aria-hidden="true">7.</strong> 第5章 测试</a></li><li class="chapter-item expanded "><a href="第6章-无极.html"><strong aria-hidden="true">8.</strong> 第6章 无极</a></li><li class="chapter-item expanded "><a href="第7章-成人仪式.html"><strong aria-hidden="true">9.</strong> 第7章 成人仪式</a></li><li class="chapter-item expanded "><a href="第8章-斗气阁.html"><strong aria-hidden="true">10.</strong> 第8章 斗气阁</a></li><li class="chapter-item expanded "><a href="第9章-轮回之主.html"><strong aria-hidden="true">11.</strong> 第9章-轮回之主</a></li><li class="chapter-item expanded "><a href="完结.html"><strong aria-hidden="true">12.</strong> 完结</a></li><li class="chapter-item expanded "><a href="小说大纲.html"><strong aria-hidden="true">13.</strong> 小说大纲</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -279,6 +279,22 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
