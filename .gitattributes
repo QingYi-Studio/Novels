@@ -4,4 +4,4 @@
 *.md linguist-language=Rust
 *.nojekyll linguist-language=Rust
 *.ttf linguist-language=Rust
-*.woff2 linguist-language=Rust
+# *.woff2 linguist-language=Rust
