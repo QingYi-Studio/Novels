@@ -1,0 +1,6 @@
+[book]
+authors = ["example"]
+language = "cn"
+multilingual = false
+src = "src"
+title = "example"
