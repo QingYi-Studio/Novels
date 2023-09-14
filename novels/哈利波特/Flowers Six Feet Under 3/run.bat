@@ -1,2 +1,1 @@
-start http://localhost:3000/
-mdbook serve
+mdbook serve --open
