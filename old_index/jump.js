@@ -1,0 +1,1 @@
+location.replace("https://qingyi-novels.zeabur.app/")
