@@ -13,7 +13,7 @@ function toggleFloatBox() {
     
     function fetchCommits() {
       // 使用合适的方法获取commits，并将结果展示在float-box-content中
-      // 以下仅为示例代码，你需要根据实际情况进行修改
+      // 以下仅为示例代码，可根据实际情况进行修改
       
       const url = 'https://api.github.com/repos/Grey-Wind/Novels/commits?per_page=10';
       
