@@ -4,3 +4,6 @@ language = "cn"
 multilingual = false
 src = "src"
 title = "关于《格兰杰小姐有个秘密》衍生文"
+
+[output.html]
+additional-js = ["../../../../js/baidu-statistics.js"]

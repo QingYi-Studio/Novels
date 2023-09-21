@@ -4,3 +4,6 @@ language = "cn"
 multilingual = false
 src = "src"
 title = "Flowers Six Feet Under 1"
+
+[output.html]
+additional-js = ["../../../../js/baidu-statistics.js"]

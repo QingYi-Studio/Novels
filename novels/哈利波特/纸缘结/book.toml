@@ -4,3 +4,6 @@ language = "cn"
 multilingual = false
 src = "src"
 title = "纸缘结"
+
+[output.html]
+additional-js = ["../../../../js/baidu-statistics.js"]

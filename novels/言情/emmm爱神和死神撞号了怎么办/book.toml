@@ -4,3 +4,6 @@ language = "cn"
 multilingual = false
 src = "src"
 title = "emmm爱神和死神撞号了怎么办"
+
+[output.html]
+additional-js = ["../../../../js/baidu-statistics.js"]
