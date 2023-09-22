@@ -18,8 +18,8 @@ function android() {
       var duration = endTime - startTime;
 
       if (duration > 300) {
-        // 访问速度超过300毫秒，Gitee
-        var fileUrl = 'https://gitee.com/sunrise-studio/QingYiNovelsMobile/releases/download/v1.0.0/v1.0.0.apk';
+        // 访问速度超过300毫秒，hub.ggo.icu
+        var fileUrl = 'https://hub.ggo.icu/Grey-Wind/QingYiNovelsMobile/releases/latest/download/app.apk';
         downloadFile(fileUrl);
       } else {
         // 访问速度未超过300毫秒，GitHub
