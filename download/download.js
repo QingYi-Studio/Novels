@@ -8,55 +8,13 @@ function downloadFile(url) {
 }
 
 function android() {
-  var url = 'https://github.com'; // 指定要检测的网址
-  var startTime = performance.now();
-  var xhr = new XMLHttpRequest();
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      var endTime = performance.now();
-      var duration = endTime - startTime;
-
-      if (duration > 300) {
-        // 访问速度超过300毫秒，hub.yzuu.cf
-        var fileUrl = 'https://hub.yzuu.cf/Grey-Wind/QingYiNovelsMobile/releases/latest/download/app.apk';
-        downloadFile(fileUrl);
-      } else {
-        // 访问速度未超过300毫秒，GitHub
-        var fileUrl = 'https://github.com/Grey-Wind/QingYiNovelsMobile/releases/latest/download/app.apk';
-        downloadFile(fileUrl);
-      }
-    }
-  };
-
-  xhr.open('GET', url, true);
-  xhr.send();
+  var fileUrl = 'https://hub.yzuu.cf/Grey-Wind/QingYiNovelsMobile/releases/latest/download/app.apk';
+  downloadFile(fileUrl);
 }
 
 function windows() {
-  var url = 'http://github.com'; // 指定要检测的网址
-  var startTime = performance.now();
-  var xhr = new XMLHttpRequest();
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      var endTime = performance.now();
-      var duration = endTime - startTime;
-
-      if (duration > 300) {
-        // 访问速度超过300毫秒，hub.ggo.icu
-        var fileUrl = 'https://hub.ggo.icu/Grey-Wind/QingYiNovels/releases/download/v2.1.0/v2.1.0.zip';
-        downloadFile(fileUrl);
-      } else {
-        // 访问速度未超过300毫秒，GitHub
-        var fileUrl = 'https://github.com/Grey-Wind/QingYiNovels/releases/download/v2.1.0/v2.1.0.zip';
-        downloadFile(fileUrl);
-      }
-    }
-  };
-
-  xhr.open('GET', url, true);
-  xhr.send();
+  var fileUrl = 'https:///hub.yzuu.cf/Grey-Wind/QingYiNovels/releases/download/v2.1.0/v2.1.0.zip';
+  downloadFile(fileUrl);
 }
 
 function undo() {
