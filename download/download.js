@@ -10,11 +10,13 @@ function downloadFile(url) {
 function android() {
   var fileUrl = 'https://hub.yzuu.cf/Grey-Wind/QingYiNovelsMobile/releases/latest/download/app.apk';
   downloadFile(fileUrl);
+  alert("已开始下载")
 }
 
 function windows() {
   var fileUrl = 'https:///hub.yzuu.cf/Grey-Wind/QingYiNovels/releases/download/v2.1.0/v2.1.0.zip';
   downloadFile(fileUrl);
+  alert("已开始下载")
 }
 
 function undo() {
