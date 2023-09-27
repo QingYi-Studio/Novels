@@ -8,7 +8,7 @@ function downloadFile(url) {
 }
 
 function android() {
-  var url = 'http://github.com'; // 指定要检测的网址
+  var url = 'https://github.com'; // 指定要检测的网址
   var startTime = performance.now();
   var xhr = new XMLHttpRequest();
 
@@ -18,8 +18,8 @@ function android() {
       var duration = endTime - startTime;
 
       if (duration > 300) {
-        // 访问速度超过300毫秒，hub.ggo.icu
-        var fileUrl = 'https://hub.ggo.icu/Grey-Wind/QingYiNovelsMobile/releases/latest/download/app.apk';
+        // 访问速度超过300毫秒，hub.yzuu.cf
+        var fileUrl = 'https://hub.yzuu.cf/Grey-Wind/QingYiNovelsMobile/releases/latest/download/app.apk';
         downloadFile(fileUrl);
       } else {
         // 访问速度未超过300毫秒，GitHub
