@@ -14,7 +14,7 @@ function android() {
 }
 
 function windows() {
-  var fileUrl = 'https:///hub.yzuu.cf/Grey-Wind/QingYiNovels/releases/download/v2.1.0/v2.1.0.zip';
+  var fileUrl = 'https:///hub.yzuu.cf/Grey-Wind/QingYiNovels/releases/latest/download/Novels.zip';
   downloadFile(fileUrl);
   alert("已开始下载")
 }
