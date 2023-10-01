@@ -4,6 +4,3 @@ language = "cn"
 multilingual = false
 src = "src"
 title = "青风永相随"
-
-[output.html]
-additional-js = ["../../../../js/baidu-statistics.js"]
