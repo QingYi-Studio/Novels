@@ -417,10 +417,12 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="./js/popper.min.js"></script>
   <script src="./js/bootstrap-4.4.1.js"></script>
+
   <!--悬浮按钮-->
   <div class="float-button" onclick="toggleFloatBox()"></div>
-  <div class="float-box" id="floatBox">
+  <div class="float-box" id="floatBox" onmouseleave="hideFloatBox()">
     <div class="float-box-content" id="commitsContent"></div>
+  </div>
 </body>
 
 </html>
