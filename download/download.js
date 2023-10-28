@@ -8,7 +8,7 @@ function downloadFile(url) {
 }
 
 function android() {
-  var fileUrl = 'https://hub.yzuu.cf/Grey-Wind/QingYiNovelsMobile/releases/latest/download/app.apk';
+  var fileUrl = 'https://hub.yzuu.cf/QingYi-Studio/QingYiNovelsMobile/releases/latest/download/app.apk';
   downloadFile(fileUrl);
   alert("已开始下载")
 }
